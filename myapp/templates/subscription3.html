@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        	  {% load static %}
+
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+<header class="header">
+    <div class="container d-flex justify-content-between align-items-center py-3">
+       <div class="logo-container">
+  <a href="/" class="logo">
+    <img src="{% static 'images/logonew1.png' %}" alt="YourHome.com Logo" class="sitename" style="width: 100px; height: auto;">
+  </a>
+</div>
+
+
+        <button class="navbar-toggler" type="button"  aria-label="Toggle navigation" onclick="toggleSidebar()" style="color: black;">
+            &#9776; <!-- This is the hamburger menu icon -->
+        </button>
+        <nav class="navmenu">
+            <ul class="nav">
+                <li class="nav-item"><a href="/" class="nav-link active" style="color: black; font-weight: 600;">Home</a></li>
+                <li class="nav-item"><a href="/propertytypes" class="nav-link" style="color: black; font-weight: 600;">Property</a></li>
+                <li class="nav-item"><a href="/about" class="nav-link" style="color: black; font-weight: 600;">About</a></li>
+                <li class="nav-item"><a href="/contact" class="nav-link" style="color: black; font-weight: 600;">Contact</a></li>
+            </ul>
+             {% if user.is_authenticated %}
+              <div class="user-info">
+            <span class="user-initial">{{ user.first_name|slice:":1" }}</span>
+            <a href="{% url 'logout' %}" class="nav-link">
+                <i class="fas fa-arrow-right" style="font-size: 24px; color: black;"></i>
+            </a>
+              </div>                {% else %}
+
+            <a href="/login" class="login-icon">
+                <i class="fas fa-sign-in-alt" style="font-size: 24px; color: #D22B2B;"></i>
+             </a>
+
+                 {% endif %}
+
+        </nav>
+
+
+
+            <!--<div class="d-flex align-items-center">
+                <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #D22B2B; border-color: black; font-size: 16px;">
+            Post Your Property
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #fff; border-color: #D22B2B;">
+            <li><a class="dropdown-item" href="/subscription1" onmousedown="this.style.backgroundColor='#D22B2B'; this.style.color='#fff';">Upto 50lac</a></li>
+            <li><a class="dropdown-item" href="/subscription2" onmousedown="this.style.backgroundColor='#D22B2B'; this.style.color='#fff';">Upto 1Cr</a></li>
+            <li><a class="dropdown-item" href="/subscription3" onmousedown="this.style.backgroundColor='#D22B2B'; this.style.color='#fff';">More than 1Cr</a></li>
+        </ul>
+    </div>
+</div> -->
+    </div>
+</header>
+<hr style="border: none; height: 1px; background-color: black;">
+
+<div id="sidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
+    <a href="/">Home</a>
+    <a href="/propertytypes">Property</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+</div>
+<section class="pricing">
+    <h1>Subscribe And Post</h1>
+    <div class="togglee">
+        <label>Monthly</label>
+        <div class="togglee-btn">
+            <input type="checkbox" id="checkbox" class="checkbox"/>
+            <label for="checkbox" class="sub" id="suv">
+                <div class="circle"></div>
+            </label>
+        </div>
+        <label>Annually</label>
+    </div>
+    <br><br>
+
+    <!-- cards -->
+    <div class="cards">
+        <div class="card shadow">
+            <ul style="list-style-type: none;">
+                <li class="pack">Basic</li>
+                <li id="basic" class="price bottom-bar">30k/month</li>
+                <li class="bottom-bar">Property Above 1Cr</li>
+                <a href="/form3"> <li><button class="btn">Make Payment</button></li></a>
+            </ul>
+        </div>
+
+        <div class="card active">
+            <ul style="list-style-type: none;">
+                <li class="pack">Premium</li>
+                <li id="basic" class="price bottom-bar">35k/month</li>
+                <li class="bottom-bar">Property Above 1Cr</li>
+                <a href="/form3">  <li><button class="btn active-btn">Make Payment</button></li></a>
+            </ul>
+        </div>
+
+        <div class="card shadow">
+            <ul style="list-style-type: none;">
+                <li class="pack">Pro</li>
+                <li id="basic" class="price bottom-bar">40k/month</li>
+                <li class="bottom-bar">Property Above 1Cr</li>
+                <a href="/form3">  <li><button class="btn">Make Payment</button></li></a>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<div class="footer-clean">
+        <footer>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li style="font-size: 16px;"><a href="https://docs.google.com/forms/d/1eJOGX-e3y25IJxrMnhbQmsOcCzo_ZuQCQZ6-SN7NQKs/edit">Buy</a></li>
+                            <li style="font-size: 16px;"><a href="https://docs.google.com/forms/d/1U3UVsF-JUpyat6JUtyMX9MiWbGVX-SuU1J7ejx-gg2U/edit">Sell</a></li>
+                            <li style="font-size: 16px;"><a href="https://docs.google.com/forms/d/1eJOGX-e3y25IJxrMnhbQmsOcCzo_ZuQCQZ6-SN7NQKs/edit">Rent</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li style="font-size: 16px;"><a href="/propertytypes">Property</a></li>
+                            <li style="font-size: 16px;"><a href="/about">About</a></li>
+                            <li style="font-size: 16px;"><a href="/contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Property</h3>
+                        <ul>
+                            <li style="font-size: 16px;"><a href="/plots">Plots</a></li>
+                            <li style="font-size: 16px;"><a href="/flats">Flats</a></li>
+                            <li style="font-size: 16px;"><a href="/villas">Villas</a></li>
+                            <li style="font-size: 16px;"><a href="/houses">Independent House</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
+                        <p class="copyright" style="font-size: 16px;">MyHome © 2024</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static '/script.js' %}"></script>
+<!-- Bootstrap Bundle with Popper -->
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+   <!-- Add this script at the bottom of your HTML file -->
+
+<script>
+
+document.getElementById('checkbox').addEventListener('change', function() {
+        const basicPrice = document.querySelectorAll('#basic.price');
+        const pricesMonthly = ['30k/month', '35k/month', '40k/month'];
+        const pricesAnnually = ['300k/year', '350k/year', '400k/year'];
+
+        if (this.checked) {
+            // Annually pricing
+            basicPrice.forEach((price, index) => {
+                price.textContent = pricesAnnually[index];
+            });
+        } else {
+            // Monthly pricing
+            basicPrice.forEach((price, index) => {
+                price.textContent = pricesMonthly[index];
+            });
+        }
+    });
+</script>
+</body>
+</html>
