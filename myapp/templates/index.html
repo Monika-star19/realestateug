@@ -82,6 +82,18 @@
     <a href="/propertytypes">Property</a>
     <a href="/about">About</a>
     <a href="/contact">Contact</a>
+    {% if user.is_authenticated %}
+    <div class="user-info">
+        <span class="user-initial">{{ user.first_name|slice:":1" }}</span>
+        <a href="{% url 'logout' %}" class="nav-link">
+            <i class="fas fa-arrow-right" style="font-size: 24px; color: black;"></i> Logout
+        </a>
+    </div>
+    {% else %}
+    <a href="/login" class="login-link">
+        <i class="fas fa-sign-in-alt" style="font-size: 24px; color: #D22B2B;"></i> Login
+    </a>
+    {% endif %}
 </div>
 
 

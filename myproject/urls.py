@@ -24,15 +24,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index),
     path('property1', views.property1),
-    path('form1', views.form1),
     path('quote', views.quote),
     path('thankyou', views.thankyou),
     path('subscription1', views.subscription1),
     path('propertytypes', views.propertytypes),
     path('subscription2', views.subscription2),
     path('subscription3', views.subscription3),
-    path('form2', views.form2),
-    path('form3', views.form3),
     path('commercial', views.commercial),
     path('flats', views.flats),
     path('houses', views.houses),
@@ -44,4 +41,5 @@ urlpatterns = [
     path('registration', views.registration),
     path('logout/', views.custom_logout, name='logout'),  # Update this line
     path('saved_property/', views.saved_property),
+
 ]

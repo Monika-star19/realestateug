@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 
 
+
 # Create your views here.
 
 def index(request):
@@ -11,8 +12,6 @@ def index(request):
 def property1(request):
     return render(request, 'property1.html')
 
-def form1(request):
-    return render(request, 'form1.html')
 
 def quote(request):
     return render(request, 'quote.html')
@@ -31,12 +30,6 @@ def subscription2(request):
 
 def subscription3(request):
     return render(request, 'subscription3.html')
-
-def form2(request):
-    return render(request, 'form2.html')
-
-def form3(request):
-    return render(request, 'form3.html')
 
 def commercial(request):
     return render(request, 'commercial.html')

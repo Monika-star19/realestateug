@@ -79,13 +79,25 @@
     <a href="/propertytypes">Property</a>
     <a href="/about">About</a>
     <a href="/contact">Contact</a>
+    {% if user.is_authenticated %}
+    <div class="user-info">
+        <span class="user-initial">{{ user.first_name|slice:":1" }}</span>
+        <a href="{% url 'logout' %}" class="nav-link">
+            <i class="fas fa-arrow-right" style="font-size: 24px; color: black;"></i> Logout
+        </a>
+    </div>
+    {% else %}
+    <a href="/login" class="login-link">
+        <i class="fas fa-sign-in-alt" style="font-size: 24px; color: #D22B2B;"></i> Login
+    </a>
+    {% endif %}
 </div>
 
-<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+<div class="reach-us">
     <div>
-        <h2 align="center">Reach Us</h2>
+        <h2>Reach Us</h2>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.736904139598!2d32.59538717310296!3d0.3660304639519521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dba68b702e1fd%3A0x2da74517b568d054!2sBukoto%20Kisasi%20Rd%2C%20Kampala%2C%20Uganda!5e0!3m2!1sen!2sin!4v1724924695292!5m2!1sen!2sin"
-        width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <div>
         <h3>Our Address</h3>

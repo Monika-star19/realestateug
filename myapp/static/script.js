@@ -12,8 +12,11 @@ function toggleSidebar() {
     var sidebar = document.getElementById("sidebar");
     if (sidebar.style.width === "250px") {
         sidebar.style.width = "0";
+        sidebar.style.transition = "width 0.3s ease";
     } else {
         sidebar.style.width = "250px";
+        sidebar.style.transition = "width 0.3s ease";
     }
 }
+
 

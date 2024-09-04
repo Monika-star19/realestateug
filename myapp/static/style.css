@@ -1088,7 +1088,6 @@ justify-content: center;
     border-radius: 50%;
     background-color: #f0f0f0;
     margin-right: 10px;
-    padding: 10px;
     border-radius: 50%;
 }
 
@@ -1101,6 +1100,37 @@ justify-content: center;
     display: flex;
     align-items: center;
 }
+
+.reach-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.reach-us h2, .reach-us h3 {
+    text-align: center;
+}
+
+.reach-us p {
+    text-align: center;
+    font-size: 16px;
+}
+
+@media (min-width: 768px) {
+    .reach-us {
+        flex-direction: row;
+    }
+
+    .reach-us iframe {
+        height: 400px;
+    }
+}
+
+
+
 
 
 
