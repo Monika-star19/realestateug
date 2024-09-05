@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 
 
-
 # Create your views here.
 
 def index(request):
@@ -63,7 +62,7 @@ def user_login(request):
             auth_login(request, user)  # Use Django's built-in login function
             return redirect('/')
         else:
-            return redirect('login')
+            return redirect('/login')
 
     return render(request, 'login.html')
 def registration(request):
@@ -88,8 +87,10 @@ def custom_logout(request):
     auth_logout(request)
     return render(request, 'index.html')
 
-def saved_property(request):
-    return render(request, 'saved_property.html')
+def properties(request):
+    return render(request, 'properties.html')
+
+
 
 
 

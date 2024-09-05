@@ -40,6 +40,6 @@ urlpatterns = [
     path('login', views.user_login),  # Update this to match the renamed function
     path('registration', views.registration),
     path('logout/', views.custom_logout, name='logout'),  # Update this line
-    path('saved_property/', views.saved_property),
+    path('properties/', views.properties),
 
 ]

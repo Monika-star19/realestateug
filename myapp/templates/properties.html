@@ -19,15 +19,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+
+
+
 </head>
 <body>
 <header class="header">
     <div class="container d-flex justify-content-between align-items-center py-3">
-       <div class="logo-container">
+    <div class="logo-container">
   <a href="/" class="logo">
     <img src="{% static 'images/logonew1.png' %}" alt="YourHome.com Logo" class="sitename" style="width: 100px; height: auto;">
   </a>
 </div>
+
 
 
         <button class="navbar-toggler" type="button"  aria-label="Toggle navigation" onclick="toggleSidebar()" style="color: black;">
@@ -40,7 +44,7 @@
                 <li class="nav-item"><a href="/about" class="nav-link" style="color: black; font-weight: 600;">About</a></li>
                 <li class="nav-item"><a href="/contact" class="nav-link" style="color: black; font-weight: 600;">Contact</a></li>
             </ul>
-             {% if user.is_authenticated %}
+            {% if user.is_authenticated %}
               <div class="user-info">
             <span class="user-initial">{{ user.first_name|slice:":1" }}</span>
             <a href="{% url 'logout' %}" class="nav-link">
@@ -56,6 +60,9 @@
 
         </nav>
 
+   <!--   <a href="https://docs.google.com/forms/d/1U3UVsF-JUpyat6JUtyMX9MiWbGVX-SuU1J7ejx-gg2U/edit">  <button class="btn btn-secondary " type="button"  aria-expanded="false" style="background-color: #D22B2B; border-color: black; font-size: 16px;">
+            Post Your Property
+        </button></a> -->
 
 
             <!--<div class="d-flex align-items-center">
@@ -72,8 +79,6 @@
 </div> -->
     </div>
 </header>
-<hr style="border: none; height: 1px; background-color: black;">
-
 <div id="sidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
     <a href="/">Home</a>
@@ -162,7 +167,227 @@
                 </div>
             </div>
         </div>
+     <div class="property-card">
+            <div class="property-image">
+                <img src="{% static '/images/property1.jpg' %}" alt="Property Image">
+            </div>
+            <div class="property-details">
+                <h2 style="color: #D22B2B;">Sanchi Splendid,  3BHK & 4BHK premium and luxurious Flats for Sale , Udaipur</h2>
+                <hr>
+                <div class="info">
+                    <div>
+                        <strong>Carpet Area</strong>
+                        <p>2950sq ft</p>
+                    </div>
+                    <div>
+                        <strong>Status</strong>
+                        <p>Under Construction</p>
+                    </div>
+                    <div>
+                        <strong>Floor</strong>
+                        <p>G+8</p>
+                    </div>
+                    <div>
+                        <strong>Furnishing</strong>
+                        <p>No</p>
+                    </div>
+                    <div>
+                        <strong>Parking</strong>
+                        <p>Yes</p>
+                    </div>
+                </div>
+                <div class="price">Starts @ Rs.94Lac</div>
+                <div class="actions">
+                  <a href="https://docs.google.com/forms/d/1eJOGX-e3y25IJxrMnhbQmsOcCzo_ZuQCQZ6-SN7NQKs/edit">  <button>Get Quote</button></a>
+                    <a href=""> <button>View Property</button></a>
+                </div>
+            </div>
+        </div>
+             <div class="property-card">
+            <div class="property-image">
+                <img src="{% static '/images/property.jpg' %}" alt="Property Image">
+            </div>
+            <div class="property-details">
+                <h2 style="color: #4c3e99;"> Kanak Ghar, 3BHK Duplex Flats Near Urban Square Mall , Udaipur</h2>
+                <hr>
+                <div class="info">
+                    <div>
+                        <strong>Carpet Area</strong>
+                        <p>3200sq ft Super Buildup</p>
+                    </div>
+                    <div>
+                        <strong>Status</strong>
+                        <p>Under Construction</p>
+                    </div>
+                    <div>
+                        <strong>Floor</strong>
+                        <p>12</p>
+                    </div>
+                    <div>
+                        <strong>Furnishing</strong>
+                        <p>No</p>
+                    </div>
+
+                    <div>
+                        <strong>Parking</strong>
+                        <p> Yes</p>
+                    </div>
+                </div>
+                <div class="price">Starts @ Rs.89Lac</div>
+                <div class="actions">
+                  <a href="https://docs.google.com/forms/d/1eJOGX-e3y25IJxrMnhbQmsOcCzo_ZuQCQZ6-SN7NQKs/edit">  <button>Get Quote</button></a>
+                   <a href=""> <button>View Property</button></a>
+                </div>
+            </div>
+        </div>
+
+     <div class="property-card">
+            <div class="property-image">
+                <img src="{% static '/images/property.jpg' %}" alt="Property Image">
+            </div>
+            <div class="property-details">
+                <h2 style="color: #D22B2B;"> Sanchi Villa, 3 BHK Duplex Villa for Sale , Udaipur</h2>
+                <hr>
+                <div class="info">
+                    <div>
+                        <strong>Carpet Area</strong>
+                        <p>2800sq ft</p>
+                    </div>
+                    <div>
+                        <strong>Status</strong>
+                        <p>Ready to Move</p>
+                    </div>
+                    <div>
+                        <strong>Floor</strong>
+                        <p>2</p>
+                    </div>
+                    <div>
+                        <strong>Furnishing</strong>
+                        <p>No</p>
+                    </div>
+                    <div>
+                        <strong>Overlooking</strong>
+                        <p> Beautiful Aravalli Hills</p>
+                    </div>
+                    <div>
+                        <strong>Parking</strong>
+                        <p> Yes</p>
+                    </div>
+                </div>
+                <div class="price">Starts @ Rs.88.40Lac</div>
+                <div class="actions">
+                  <a href="https://docs.google.com/forms/d/1eJOGX-e3y25IJxrMnhbQmsOcCzo_ZuQCQZ6-SN7NQKs/edit">  <button>Get Quote</button></a>
+                   <a href=""> <button>View Property</button></a>
+                </div>
+            </div>
+        </div>
+<div class="property-card">
+            <div class="property-image">
+                <img src="{% static '/images/property.jpg' %}" alt="Property Image">
+            </div>
+            <div class="property-details">
+                <h2 style="color: #D22B2B;"> Platinum Park, Plots for Sale , Udaipur</h2>
+                <hr>
+                <div class="info">
+                    <div>
+                        <strong>Carpet Area</strong>
+                        <p>900sq ft - 4000sq ft</p>
+                    </div>
+                    <div>
+                        <strong>UIT Converted</strong>
+                        <p>Yes</p>
+                    </div>
+                    <div>
+                        <strong>Residential</strong>
+                        <p>Yes</p>
+                    </div>
+                    <div>
+                        <strong>Mapped</strong>
+                        <p>Yes</p>
+                    </div>
+                </div>
+                <div class="price">Starts @ Rs.4000/- Per Sq Ft</div>
+                <div class="actions">
+                  <a href="https://docs.google.com/forms/d/1eJOGX-e3y25IJxrMnhbQmsOcCzo_ZuQCQZ6-SN7NQKs/edit">  <button>Get Quote</button></a>
+                   <a href=""> <button>View Property</button></a>
+                </div>
+            </div>
+        </div>
+             <div class="property-card">
+            <div class="property-image">
+                <img src="{% static '/images/property.jpg' %}" alt="Property Image">
+            </div>
+            <div class="property-details">
+                <h2 style="color: #D22B2B;"> Sanchi Sansaar, Plots for Sale in Umarda , Udaipur</h2>
+                <hr>
+                <div class="info">
+                    <div>
+                        <strong>Carpet Area</strong>
+                        <p>800sq ft - 3000sq ft</p>
+                    </div>
+                    <div>
+                        <strong>SDO Converted</strong>
+                        <p>Yes</p>
+                    </div>
+                    <div>
+                        <strong>Residential</strong>
+                        <p>Yes</p>
+                    </div>
+                    <div>
+                        <strong>Mapped</strong>
+                        <p>Yes</p>
+                    </div>
+                </div>
+                <div class="price">Starts @ Rs.1300/- Per Sq Ft</div>
+                <div class="actions">
+                  <a href="https://docs.google.com/forms/d/1eJOGX-e3y25IJxrMnhbQmsOcCzo_ZuQCQZ6-SN7NQKs/edit">  <button>Get Quote</button></a>
+                   <a href=""> <button>View Property</button></a>
+                </div>
+            </div>
+        </div>
+      <div class="property-card">
+            <div class="property-image">
+                <img src="{% static '/images/property.jpg' %}" alt="Property Image">
+            </div>
+            <div class="property-details">
+                <h2 style="color: #D22B2B;"> Sanchi Villa, 3 BHK Duplex Villa for Sale , Udaipur</h2>
+                <hr>
+                <div class="info">
+                    <div>
+                        <strong>Carpet Area</strong>
+                        <p>2800sq ft</p>
+                    </div>
+                    <div>
+                        <strong>Status</strong>
+                        <p>Ready to Move</p>
+                    </div>
+                    <div>
+                        <strong>Floor</strong>
+                        <p>2</p>
+                    </div>
+                    <div>
+                        <strong>Furnishing</strong>
+                        <p>No</p>
+                    </div>
+                    <div>
+                        <strong>Overlooking</strong>
+                        <p> Beautiful Aravalli Hills</p>
+                    </div>
+                    <div>
+                        <strong>Parking</strong>
+                        <p> Yes</p>
+                    </div>
+                </div>
+                <div class="price">Starts @ Rs.88.40Lac</div>
+                <div class="actions">
+                  <a href="https://docs.google.com/forms/d/1eJOGX-e3y25IJxrMnhbQmsOcCzo_ZuQCQZ6-SN7NQKs/edit">  <button>Get Quote</button></a>
+                   <a href=""> <button>View Property</button></a>
+                </div>
+            </div>
+        </div>
          </div>
+
+
 
 <div class="footer-clean">
         <footer>
