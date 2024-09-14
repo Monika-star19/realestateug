@@ -28,7 +28,7 @@
     <img src="{% static 'images/logonew1.png' %}" alt="YourHome.com Logo" class="sitename" style="width: 100px; height: auto;">
   </a>
 </div>
-rre
+
 
         <button class="navbar-toggler" type="button"  aria-label="Toggle navigation" onclick="toggleSidebar()" style="color: black;">
             &#9776; <!-- This is the hamburger menu icon -->
@@ -38,11 +38,11 @@ rre
                 <li class="nav-item"><a href="/" class="nav-link active" style="color: black; ">Home</a></li>
                 <li class="nav-item"><a href="" class="nav-link" style="color: black; ">Upcoming Listings</a></li>
                 <li class="nav-item"><a href="/about" class="nav-link" style="color: black; ">About</a></li>
-                <li class="nav-item"><a href="/contact" class="nav-link" style="color: black; ">Contact</a></li>
+                <li class="nav-item"><a href="/contact" class="nav-link" style="color: black;">Contact</a></li>
                 <li class="nav-item"><a href="/enquiry" class="nav-link" style="color: black; ">Enquiry</a></li>
 
             </ul>
-            {% if user.is_authenticated %}
+             {% if user.is_authenticated %}
               <div class="user-info">
             <span class="user-initial">{{ user.first_name|slice:":1" }}</span>
             <a href="{% url 'logout' %}" class="nav-link">
@@ -75,7 +75,6 @@ rre
     </div>
 </header>
 <hr style="border: none; height: 1px; background-color: black;">
-
 <div id="sidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
     <a href="/">Home</a>
@@ -97,40 +96,139 @@ rre
     </a>
     {% endif %}
 </div>
-<div class="wrapper-container">
-<div class="wrapper" >
-    <span class="icon-close"><ion-icon name="close"></ion-icon></span>
-    <div class="form-box login">
-        <h2>Login</h2>
-        <form action="/login" method="post">
-            {% csrf_token %}
-            <div class="input-box">
-                <span class="icon"><ion-icon name="person"></ion-icon></span>
-                <input type="text" name="username" required placeholder="Username">
-            </div>
-            <div class="input-box">
-                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                <input type="password" name="password" required placeholder="Enter your password">
-            </div>
-            <div class="remember-forgot">
-                <label><input type="checkbox">Remember me</label>
-                <a href="#">Forgot_Password?</a>
-            </div>
-            <button type="submit" class="btn">Login</button>
-            <div class="login-register">
-                <p>Don't have an account? <a href="/registration" class="register-link">Register</a> </p>
-            </div>
-        </form>
+
+
+    <div class="form-wrapper">
+        <div class="form-container">
+        <form method="post" action="{% url 'saveseller' %}">
+        {% csrf_token %}
+
+                <label for="owner-name">Name of the house owner</label>
+                <input type="text" id="owner-name" name="owner-name" placeholder="Name of the house owner">
+
+                <label for="number">Enter your phone no.</label>
+                <input type="tel" id="number" name="number" placeholder="Enter your phone no.">
+
+                <label for="email">Enter your Email</label>
+                <input type="text" id="email" name="email" placeholder="Enter your Email">
+
+
+
+                <label>Property type</label>
+                <div class="property-type">
+                    <input type="radio" id="flats" name="property-type" value="Flats" checked>
+                    <label for="flats">flats</label>
+                    <input type="radio" id="Plots" name="property-type" value="Plots">
+                    <label for="Plots">Plots</label>
+                    <input type="radio" id="independent" name="property-type" value="independent">
+                    <label for="independent">Independent House</label>
+                    <input type="radio" id="villa" name="property-type" value="villa">
+                    <label for="villa">Villas</label>
+                    <input type="radio" id="commercial" name="property-type" value="commercial">
+                    <label for="commercial">Commercial Space</label>
+                </div>
+
+                <label>No. of bedrooms in the property</label>
+                <div class="bedrooms">
+                    <input type="radio" id="one" name="bedrooms" value="1">
+                    <label for="one">1</label>
+                    <input type="radio" id="two" name="bedrooms" value="2">
+                    <label for="two">2</label>
+                    <input type="radio" id="three" name="bedrooms" value="3">
+                    <label for="three">3</label>
+                    <input type="radio" id="four-plus" name="bedrooms" value="4+">
+                    <label for="four-plus">4+</label>
+                </div>
+                 <label>No. of bathrooms in the property</label>
+                <div class="bathrooms">
+                    <input type="radio" id="one" name="bathrooms" value="1">
+                    <label for="one">1</label>
+                    <input type="radio" id="two" name="bathrooms" value="2">
+                    <label for="two">2</label>
+                    <input type="radio" id="three" name="bathrooms" value="3">
+                    <label for="three">3</label>
+                    <input type="radio" id="four-plus" name="bathrooms" value="4+">
+                    <label for="four-plus">4+</label>
+                </div>
+
+                <label>No. of floors in the property</label>
+                <div class="floors">
+                    <input type="radio" id="one" name="floors" value="1">
+                    <label for="one">1</label>
+                    <input type="radio" id="two" name="floors" value="2">
+                    <label for="two">2</label>
+                    <input type="radio" id="three" name="floors" value="3">
+                    <label for="three">3</label>
+                    <input type="radio" id="four-plus" name="floors" value="4+">
+                    <label for="four-plus">4+</label>
+                </div>
+
+
+                <label for="address">Complete address of  property</label>
+                <input type="text" id="address" name="address" placeholder="Address">
+
+
+                <label for="city">Select locality</label>
+                <select id="city" name="city">
+                    <option value="bhuwana">Bhuwana</option>
+                    <option value="pratap">Pratap Gaurav Kendra</option>
+                    <option value="kalladwas">Kalladwas</option>
+                    <option value="neemuchkheda">Neemuchkheda</option>
+                </select>
+
+
+                <label for="area">Area of property</label>
+                <input type="text" id="area" name="area" placeholder="Area ">
+
+                <label for="built">Built year of property</label>
+                <input type="text" id="built" name="built" placeholder="built ">
+
+                <label for="parking">Parking space</label>
+                <select id="parking" name="parking">
+                    <option value="yes">Yes/No</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                <label for="ready">Ready to move</label>
+                <select id="ready" name="ready" >
+                    <option value="yes">Yes/No</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                <label for="furnished">Furnished</label>
+                <select id="furnished" name="furnished" >
+                    <option value="yes">Yes/No</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+
+                <label for="year">How many years have you owned this Property?</label>
+                <input type="text" id="year" name="year" placeholder=" ">
+
+                <label for="maintenance">Does the property need any kind of maintenance? If yes, please mention.</label>
+                <input type="text" id="maintenance" name="maintenance" placeholder=" ">
+
+                <label for="money">How much are you asking for your property?</label>
+                <input type="text" id="money" name="money" placeholder=" ">
+
+                <label for="hear">How did you hear about us?</label>
+                <select id="hear" name="hear" >
+                    <option value=""></option>
+                    <option value="yes">From social media</option>
+                    <option value="no">From friend</option>
+                    <option value="no">From any user of our site</option>
+
+                </select>
+
+                <label for="property-images">Upload Images of the Property</label>
+            <input type="file" id="property-images" name="property-images" accept="image/*" multiple>
+
+            <label for="property-video">Upload Video of the Property (optional)</label>
+            <input type="file" id="property-video" name="property-video" accept="video/*">
+                <button type="submit" class="btn btn-primary" style="background-color: #D22B2B; border-color: black; font-size: 16px; margin-top: 10px; display: block; margin-left: auto; margin-right: auto; width: 150px;">Submit</button>
+            </form>
+        </div>
     </div>
-</div>
-</div>
-
-
-
-
-
-
-
 <div class="footer-clean">
     <footer>
         <div class="container">

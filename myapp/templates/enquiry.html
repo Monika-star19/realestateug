@@ -28,7 +28,7 @@
     <img src="{% static 'images/logonew1.png' %}" alt="YourHome.com Logo" class="sitename" style="width: 100px; height: auto;">
   </a>
 </div>
-rre
+
 
         <button class="navbar-toggler" type="button"  aria-label="Toggle navigation" onclick="toggleSidebar()" style="color: black;">
             &#9776; <!-- This is the hamburger menu icon -->
@@ -38,11 +38,11 @@ rre
                 <li class="nav-item"><a href="/" class="nav-link active" style="color: black; ">Home</a></li>
                 <li class="nav-item"><a href="" class="nav-link" style="color: black; ">Upcoming Listings</a></li>
                 <li class="nav-item"><a href="/about" class="nav-link" style="color: black; ">About</a></li>
-                <li class="nav-item"><a href="/contact" class="nav-link" style="color: black; ">Contact</a></li>
+                <li class="nav-item"><a href="/contact" class="nav-link" style="color: black;">Contact</a></li>
                 <li class="nav-item"><a href="/enquiry" class="nav-link" style="color: black; ">Enquiry</a></li>
 
             </ul>
-            {% if user.is_authenticated %}
+             {% if user.is_authenticated %}
               <div class="user-info">
             <span class="user-initial">{{ user.first_name|slice:":1" }}</span>
             <a href="{% url 'logout' %}" class="nav-link">
@@ -75,7 +75,6 @@ rre
     </div>
 </header>
 <hr style="border: none; height: 1px; background-color: black;">
-
 <div id="sidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
     <a href="/">Home</a>
@@ -97,39 +96,63 @@ rre
     </a>
     {% endif %}
 </div>
-<div class="wrapper-container">
-<div class="wrapper" >
-    <span class="icon-close"><ion-icon name="close"></ion-icon></span>
-    <div class="form-box login">
-        <h2>Login</h2>
-        <form action="/login" method="post">
-            {% csrf_token %}
-            <div class="input-box">
-                <span class="icon"><ion-icon name="person"></ion-icon></span>
-                <input type="text" name="username" required placeholder="Username">
-            </div>
-            <div class="input-box">
-                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                <input type="password" name="password" required placeholder="Enter your password">
-            </div>
-            <div class="remember-forgot">
-                <label><input type="checkbox">Remember me</label>
-                <a href="#">Forgot_Password?</a>
-            </div>
-            <button type="submit" class="btn">Login</button>
-            <div class="login-register">
-                <p>Don't have an account? <a href="/registration" class="register-link">Register</a> </p>
-            </div>
-        </form>
+
+<div class="form2-wrapper">
+        <div class="form2-container">
+        <form method="post" action="{% url 'enquirysave' %}">
+        {% csrf_token %}
+
+                <label for="name">First Name</label>
+                <input type="text" id="name" name="name" placeholder="">
+
+            <label for="last">Last Name</label>
+                <input type="text" id="last" name="last" placeholder="">
+
+
+                <label for="number">Enter your phone no.</label>
+                <input type="tel" id="number" name="number" placeholder="">
+
+                <label for="email">Enter your Email</label>
+                <input type="text" id="email" name="email" placeholder="">
+
+
+                <label for="profession">Profession</label>
+                <input type="text" id="profession" name="profession" placeholder="">
+
+                <label for="rent/buy">Rent/Buy</label>
+                <select id="rent/buy" name="rent/buy">
+                    <option value="yes"></option>
+                    <option value="yes">Buy</option>
+                    <option value="no">Rent</option>
+                </select>
+                <label for="ready">Property Types</label>
+                <select id="ready" name="ready" >
+                    <option value="yes"></option>
+                    <option value="yes">Plots</option>
+                    <option value="no">Flats</option>
+                    <option value="yes">Villas</option>
+                    <option value="yes">Commercial Space</option>
+                    <option value="yes">Independent House</option>
+                </select>
+
+            <label for="budget">Budget</label>
+                <select id="budget" name="budget" >
+                    <option value="yes"></option>
+                    <option value="yes">10Lac-20Lac</option>
+                    <option value="no">30Lac-50Lac</option>
+                    <option value="yes">50Lac-70Lac</option>
+                    <option value="yes">70Lac-1Cr</option>
+                    <option value="yes">1Cr +</option>
+                </select>
+
+
+                <label for="message">Message</label>
+                <input type="text" id="message" name="message" placeholder="">
+
+                <button type="submit" class="btn btn-primary" style="background-color: #D22B2B; border-color: black; font-size: 16px; margin-top: 10px; display: block; margin-left: auto; margin-right: auto; width: 150px;">Submit</button>
+            </form>
+        </div>
     </div>
-</div>
-</div>
-
-
-
-
-
-
 
 <div class="footer-clean">
     <footer>

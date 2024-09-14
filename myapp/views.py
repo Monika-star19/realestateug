@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
-
+from .models import Sellerproperty, Enquiry
 
 # Create your views here.
 
@@ -15,8 +15,8 @@ def property1(request):
 def quote(request):
     return render(request, 'quote.html')
 
-def thankyou(request):
-    return render(request, 'thankyou.html')
+def success(request):
+    return render(request, 'success.html')
 
 def subscription1(request):
     return render(request, 'subscription1.html')
@@ -74,7 +74,6 @@ def registration(request):
         email = request.POST.get('email')
         pass1 = request.POST.get('pass1')
         pass2 = request.POST.get('pass2')
-
         customer = User.objects.create_user(username, email, pass1)
         customer.first_name = first_name
         customer.last_name = last_name
@@ -90,8 +89,97 @@ def custom_logout(request):
 def properties(request):
     return render(request, 'properties.html')
 
+def sellerform(request):
+    return render(request,'sellerform.html')
+
+def enquiry(request):
+    return render(request,'enquiry.html')
 
 
+def saveseller(request):
+    if request.method == "POST":
+        name = request.POST.get('owner-name')
+        number = request.POST.get('number')
+        email = request.POST.get('email')
+        property_type = request.POST.get('property-type')
+        bedrooms = request.POST.get('bedrooms')
+        bathrooms = request.POST.get('bathrooms')
+        floors = request.POST.get('floors')
+        address = request.POST.get('address')
+        city = request.POST.get('city')
+        area = request.POST.get('area')
+        built = request.POST.get('built')
+        parking = request.POST.get('parking')
+        ready = request.POST.get('ready')
+        furnished = request.POST.get('furnished')
+        year = request.POST.get('year')
+        maintenance = request.POST.get('maintenance')
+        money = request.POST.get('money')
+        hear = request.POST.get('hear')
+        property_images = request.POST.get('property-images')
+        property_video = request.POST.get('property-video')
+
+        data = Sellerproperty(owner_name=name, number=number, email=email, property_type=property_type, bedrooms=bedrooms, bathrooms=bathrooms, floors=floors,
+                              address=address, city=city, area=area, built=built, parking=parking, ready=ready, furnished=furnished, year=year, maintenance=maintenance,
+                              money=money, hear=hear, image=property_images, video=property_video)
+
+        data.save()
+
+    return render(request,'success.html')
+
+
+def enquirysave(request):
+    if request.method == 'POST':
+        first_name = request.POST.get('name')
+        last_name = request.POST.get('last')
+        phone_number = request.POST.get('number')
+        email = request.POST.get('email')
+        profession = request.POST.get('profession')
+        rent_or_buy = request.POST.get('rent/buy')
+        property_type = request.POST.get('ready')
+        budget = request.POST.get('budget')
+        message = request.POST.get('message')
+
+        # Create an instance of the Enquiry model with the form data
+        data = Enquiry(
+            first_name=first_name,
+            last_name=last_name,
+            phone_number=phone_number,
+            email=email,
+            profession=profession,
+            rent_or_buy=rent_or_buy,
+            property_type=property_type,
+            budget=budget,
+            message=message
+        )
+
+        # Save the instance to the database
+        data.save()
+
+        # Render the success page after saving
+        return render(request, 'enquirysuccess.html')
+
+
+
+def enquirysuccess(request):
+    return render(request, 'enquirysuccess.html')
+
+def properties(request):
+    # Get query parameters from the URL
+    location = request.GET.get('location')
+    offer = request.GET.get('offer')
+    property_type = request.GET.get('type')
+    budget = request.GET.get('budget')
+
+    # Add your filtering logic here, e.g., query the database based on these parameters
+
+    # Pass the filtered data to the template
+    return render(request, 'properties.html', {
+        'location': location,
+        'offer': offer,
+        'property_type': property_type,
+        'budget': budget,
+    })
 
 
 

@@ -28,7 +28,7 @@
     <img src="{% static 'images/logonew1.png' %}" alt="YourHome.com Logo" class="sitename" style="width: 100px; height: auto;">
   </a>
 </div>
-rre
+
 
         <button class="navbar-toggler" type="button"  aria-label="Toggle navigation" onclick="toggleSidebar()" style="color: black;">
             &#9776; <!-- This is the hamburger menu icon -->
@@ -36,13 +36,13 @@ rre
         <nav class="navmenu">
             <ul class="nav">
                 <li class="nav-item"><a href="/" class="nav-link active" style="color: black; ">Home</a></li>
-                <li class="nav-item"><a href="" class="nav-link" style="color: black; ">Upcoming Listings</a></li>
-                <li class="nav-item"><a href="/about" class="nav-link" style="color: black; ">About</a></li>
+                <li class="nav-item"><a href="" class="nav-link" style="color: black;">Upcoming Listings</a></li>
+                <li class="nav-item"><a href="/about" class="nav-link" style="color: black;">About</a></li>
                 <li class="nav-item"><a href="/contact" class="nav-link" style="color: black; ">Contact</a></li>
                 <li class="nav-item"><a href="/enquiry" class="nav-link" style="color: black; ">Enquiry</a></li>
 
             </ul>
-            {% if user.is_authenticated %}
+             {% if user.is_authenticated %}
               <div class="user-info">
             <span class="user-initial">{{ user.first_name|slice:":1" }}</span>
             <a href="{% url 'logout' %}" class="nav-link">
@@ -97,34 +97,11 @@ rre
     </a>
     {% endif %}
 </div>
-<div class="wrapper-container">
-<div class="wrapper" >
-    <span class="icon-close"><ion-icon name="close"></ion-icon></span>
-    <div class="form-box login">
-        <h2>Login</h2>
-        <form action="/login" method="post">
-            {% csrf_token %}
-            <div class="input-box">
-                <span class="icon"><ion-icon name="person"></ion-icon></span>
-                <input type="text" name="username" required placeholder="Username">
-            </div>
-            <div class="input-box">
-                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                <input type="password" name="password" required placeholder="Enter your password">
-            </div>
-            <div class="remember-forgot">
-                <label><input type="checkbox">Remember me</label>
-                <a href="#">Forgot_Password?</a>
-            </div>
-            <button type="submit" class="btn">Login</button>
-            <div class="login-register">
-                <p>Don't have an account? <a href="/registration" class="register-link">Register</a> </p>
-            </div>
-        </form>
+<div class="thank-you-container" style="text-align: center; padding: 20px; border: 1px solid #ddd; border-radius: 10px; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); max-width: 500px; margin: 0 auto;">
+        <h1 style="color: #333;">Thank You!</h1>
+        <p style="font-size: 16px; color: #555;"><h2>We will get back to you soon!</h2> </p>
+        <a href="/" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: #fff; background-color: #D22B2B; text-decoration: none; border-radius: 5px; margin-top: 20px; text-align: center;">Return to Home</a>
     </div>
-</div>
-</div>
-
 
 
 

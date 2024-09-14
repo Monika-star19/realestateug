@@ -25,7 +25,8 @@ urlpatterns = [
     path('',views.index),
     path('property1', views.property1),
     path('quote', views.quote),
-    path('thankyou', views.thankyou),
+    path('success', views.success),
+    path('enquirysuccess', views.enquirysuccess),
     path('subscription1', views.subscription1),
     path('propertytypes', views.propertytypes),
     path('subscription2', views.subscription2),
@@ -40,6 +41,10 @@ urlpatterns = [
     path('login', views.user_login),  # Update this to match the renamed function
     path('registration', views.registration),
     path('logout/', views.custom_logout, name='logout'),  # Update this line
-    path('properties/', views.properties),
+    path('properties/', views.properties, name='properties'),
+    path('sellerform/', views.sellerform),
+    path('enquiry/', views.enquiry),
+     path('saveseller', views.saveseller, name="saveseller"),
+    path('enquirysave', views.enquirysave, name='enquirysave'),
 
 ]

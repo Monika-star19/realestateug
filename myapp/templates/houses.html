@@ -35,10 +35,12 @@
         </button>
         <nav class="navmenu">
             <ul class="nav">
-                <li class="nav-item"><a href="/" class="nav-link active" style="color: black; font-weight: 600;">Home</a></li>
-                <li class="nav-item"><a href="/propertytypes" class="nav-link" style="color: black; font-weight: 600;">Property</a></li>
-                <li class="nav-item"><a href="/about" class="nav-link" style="color: black; font-weight: 600;">About</a></li>
-                <li class="nav-item"><a href="/contact" class="nav-link" style="color: black; font-weight: 600;">Contact</a></li>
+                <li class="nav-item"><a href="/" class="nav-link active" style="color: black; ">Home</a></li>
+                <li class="nav-item"><a href="" class="nav-link" style="color: black; ">Upcoming Listings</a></li>
+                <li class="nav-item"><a href="/about" class="nav-link" style="color: black; ">About</a></li>
+                <li class="nav-item"><a href="/contact" class="nav-link" style="color: black; ">Contact</a></li>
+                <li class="nav-item"><a href="/enquiry" class="nav-link" style="color: black; ">Enquiry</a></li>
+
             </ul>
             {% if user.is_authenticated %}
               <div class="user-info">
@@ -77,9 +79,11 @@
 <div id="sidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
     <a href="/">Home</a>
-    <a href="/propertytypes">Property</a>
+    <a href="">Upcoming Listings</a>
     <a href="/about">About</a>
     <a href="/contact">Contact</a>
+    <a href="/enquiry">Enquiry</a>
+
     {% if user.is_authenticated %}
     <div class="user-info">
         <span class="user-initial">{{ user.first_name|slice:":1" }}</span>
@@ -142,42 +146,59 @@
          </div>
 
 <div class="footer-clean">
-        <footer>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-sm-4 col-md-3 item">
-                        <h3>Services</h3>
-                        <ul>
-                            <li style="font-size: 16px;"><a href="https://docs.google.com/forms/d/1eJOGX-e3y25IJxrMnhbQmsOcCzo_ZuQCQZ6-SN7NQKs/edit">Buy</a></li>
-                            <li style="font-size: 16px;"><a href="https://docs.google.com/forms/d/1U3UVsF-JUpyat6JUtyMX9MiWbGVX-SuU1J7ejx-gg2U/edit">Sell</a></li>
-                            <li style="font-size: 16px;"><a href="https://docs.google.com/forms/d/1eJOGX-e3y25IJxrMnhbQmsOcCzo_ZuQCQZ6-SN7NQKs/edit">Rent</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-4 col-md-3 item">
-                        <h3>About</h3>
-                        <ul>
-                            <li style="font-size: 16px;"><a href="/propertytypes">Property</a></li>
-                            <li style="font-size: 16px;"><a href="/about">About</a></li>
-                            <li style="font-size: 16px;"><a href="/contact">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-4 col-md-3 item">
-                        <h3>Property</h3>
-                        <ul>
-                            <li style="font-size: 16px;"><a href="/plots">Plots</a></li>
-                            <li style="font-size: 16px;"><a href="/flats">Flats</a></li>
-                            <li style="font-size: 16px;"><a href="/villas">Villas</a></li>
-                            <li style="font-size: 16px;"><a href="/houses">Independent House</a></li>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- New column for logo and description -->
+                <div class="col-md-3 item footer-logo">
+                    <img src="{% static 'images/logonew1.png' %}" alt="Logo">
+                    <p>MyHome is your trusted partner in finding the perfect property. Whether you're looking to buy, sell, or rent, we offer a comprehensive range of services to meet your real estate needs. Our dedicated team ensures a seamless experience with personalized support and expert advice. </p>
+                </div>
 
-                        </ul>
-                    </div>
-                    <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
-                        <p class="copyright" style="font-size: 16px;">MyHome © 2024</p>
-                    </div>
+                <!-- Existing columns -->
+                <div class="col-md-3 item">
+                    <h3>Services</h3>
+                    <ul>
+                        <li style="font-size: 16px;"><a href="">List your property</a></li>
+                        <li style="font-size: 16px;"><a href="">Buy property</a></li>
+                        <li style="font-size: 16px;"><a href="">Rental property</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 item">
+                    <h3>Myhome.ug</h3>
+                    <ul>
+                        <li style="font-size: 16px;"><a href="/about">About</a></li>
+                        <li style="font-size: 16px;"><a href="">Work with us</a></li>
+                        <li style="font-size: 16px;"><a href="">Our brand book</a></li>
+                        <li style="font-size: 16px;"><a href="">Real estate trends</a></li>
+                        <li style="font-size: 16px;"><a href="">Blog</a></li>
+                        <li style="font-size: 16px;"><a href="">Contact us</a></li>
+
+
+
+                    </ul>
+                </div>
+                <div class="col-md-3 item">
+                    <h3>Help center</h3>
+                    <ul>
+                        <li style="font-size: 16px;"><a href="/plots">Privacy and Policy</a></li>
+                        <li style="font-size: 16px;"><a href="/flats">Terms & Conditions</a></li>
+                    </ul>
                 </div>
             </div>
-        </footer>
-    </div>
+            <div class="row">
+                <div class="col-lg-12 item social text-center">
+                    <a href="#"><i class="icon ion-social-facebook"></i></a>
+                    <a href="#"><i class="icon ion-social-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="icon ion-social-youtube"></i></a> <!-- YouTube -->
+
+                    <p class="copyright" style="font-size: 16px;">Made by Ugandablog</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="{% static '/script.js' %}"></script>

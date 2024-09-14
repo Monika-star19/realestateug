@@ -3,10 +3,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
+    font-family: "Bai Jamjuree", sans-serif;
+  font-style: normal;
+  font-weight: 300;
 }
 
 .header {
@@ -37,8 +36,6 @@ body {
     font-size: 18px;
     transition: color 0.3s ease;
 }
-
-
 
 .navmenu ul li a:hover,
 .navmenu ul li a.active {
@@ -721,7 +718,7 @@ font-size: 1.7rem;
     color: #666;
 }
 .footer-clean {
-  padding:50px 0;
+  padding:30px 0 ;
   background-color:#D22B2B;
   color: #fff;
 }
@@ -1129,7 +1126,238 @@ justify-content: center;
     }
 }
 
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300vh; /* Makes sure the wrapper takes the full height of the viewport */
+    width: 100%;
+    padding: 20px; /* Ensures spacing on smaller screens */
+}
 
+.form-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 1000px;
+    width: 100%;
+
+}
+
+.form2-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150vh; /* Takes the full viewport height */
+    width: 60%; /* Ensures the wrapper takes up the full width */
+    padding: 20px; /* Adds some spacing */
+    margin: 0 auto; /* Horizontally centers the form */
+}
+
+.form2-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 1000px;
+    width: 100%; /* Ensures the container takes up the full available width */
+}
+
+
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.property-type,
+.bedrooms {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.property-type label,
+.bedrooms label {
+    font-size: 14px;
+    color: #333;
+}
+
+.bathrooms {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.property-type label,
+.bathrooms label {
+    font-size: 14px;
+    color: #333;
+}
+
+.floors {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.property-type label,
+.floors label {
+    font-size: 14px;
+    color: #333;
+}
+
+.property-type input[type="radio"],
+.bedrooms input[type="radio"] {
+    margin-right: 5px;
+}
+.bathrooms input[type="radio"] {
+    margin-right: 5px;
+}
+
+.floors input[type="radio"] {
+    margin-right: 5px;
+}
+
+.footer-logo {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.footer-logo img {
+    display: block;
+    width: auto;
+    max-width: 100px; /* Adjust size as needed */
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    font-size: 16px;
+    color: #fff;
+    margin: 0;
+}
+
+
+.hero-section {
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    /* Responsive for smaller screens */
+    .search-bar-overlay {
+        width: 90%; /* Adjust the width for smaller screens */
+        top: 60%; /* Lower the search bar on mobile */
+    }
+}
+
+
+.filters form{
+background-color: #fff;
+padding: 2rem;
+height:400px;
+width: 500px;
+margin-left: 250px;
+
+}
+
+.filters form h3{
+font-size: 2.5rem;
+padding-bottom: 1rem;
+color: black;
+text-transform: capitalize;
+text-align: center;
+}
+
+.filters form .flex{
+display: flex;
+gap: 1rem;
+flex-wrap: wrap;
+}
+
+.filters form .flex .box{
+flex: 1 1  40%;
+}
+
+.filters form .flex .box .input{
+margin: 1rem 0;
+color: black;
+border-color: #D22B2B;
+}
+
+.filters form .flex .box p{
+font-size: 1.5rem;
+color: black;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .filters form {
+        padding: .5rem;
+        overflow-y: auto; /* Allows scrolling if the content exceeds the max height */
+        height:200px;
+        width: 300px;
+        margin-left: 20px;
+
+    }
+
+    .filters form h3 {
+        font-size: 1.2rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .filters form .flex {
+        flex-direction: column;
+        gap: 0.2rem; /* Reduces the gap between elements */
+    }
+
+    .filters form .flex .box {
+        flex: 1 1 ;
+    }
+
+    .filters form .flex .box .input {
+        margin: 0.5rem 0; /* Reduces the margin between input fields */
+        font-size: 0.9rem;
+    }
+
+    .filters form .flex .box p {
+        font-size: .8rem;
+        margin: 0.5rem 0; /* Reduces the margin below paragraphs */
+    }
+}
+
+@media (max-width: 480px) {
+    .filters form {
+        max-height: 50vh; /* Further reduces the maximum height for mobile devices */
+    }
+
+    .filters form .h3 {
+        font-size: .5rem;
+    }
+
+    .filters form .flex .box .input {
+        font-size: 0.8rem;
+        margin: 0.2rem 0; /* Further reduces the margin between input fields */
+    }
+
+    .filters form .flex .box p {
+        font-size: .5rem;
+        margin: 0.3rem 0;
+            }
+}
 
 
 
