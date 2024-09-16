@@ -1130,7 +1130,7 @@ justify-content: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300vh; /* Makes sure the wrapper takes the full height of the viewport */
+    height: 320vh; /* Makes sure the wrapper takes the full height of the viewport */
     width: 100%;
     padding: 20px; /* Ensures spacing on smaller screens */
 }
@@ -1149,7 +1149,7 @@ justify-content: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150vh; /* Takes the full viewport height */
+    height: 180vh; /* Takes the full viewport height */
     width: 60%; /* Ensures the wrapper takes up the full width */
     padding: 20px; /* Adds some spacing */
     margin: 0 auto; /* Horizontally centers the form */
