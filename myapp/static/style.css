@@ -1360,6 +1360,59 @@ color: black;
 }
 
 
+.property-listings-section {
+    background-color: #f9f9f9;
+}
+
+.scrollable-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 15px 0;
+}
+
+.property-item {
+    flex: 0 0 auto;
+    width: 300px; /* Adjust width as needed */
+    margin-right: 15px;
+    text-align: center;
+    background-color: #D22B2B;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.property-item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.property-name {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px;
+    color: white;
+}
+
+.property-item a {
+    text-decoration: none;
+
+}
+
+.property-item  a:hover{
+text-decoration: underline black;
+}
+
+
+.center-content {
+    margin: 0 auto; /* Centers the div horizontally */
+    max-width: 950px; /* Limits the width of the content */
+    padding: 10px; /* Adds padding inside the div */
+    text-align: left; /* Centers text inside the div */
+}
+
+
+
 
 
 

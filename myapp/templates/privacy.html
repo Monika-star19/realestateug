@@ -6,11 +6,9 @@
 
     <meta charset="UTF-8">
     <title>Title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="{% static '/style.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap CSS -->
@@ -23,13 +21,11 @@
 <body>
 <header class="header">
     <div class="container d-flex justify-content-between align-items-center py-3">
-       <div class="logo-container">
+    <div class="logo-container">
   <a href="/" class="logo">
     <img src="{% static 'images/logonew1.png' %}" alt="YourHome.com Logo" class="sitename" style="width: 100px; height: auto;">
   </a>
 </div>
-
-
         <button class="navbar-toggler" type="button"  aria-label="Toggle navigation" onclick="toggleSidebar()" style="color: black;">
             &#9776; <!-- This is the hamburger menu icon -->
         </button>
@@ -42,7 +38,7 @@
                 <li class="nav-item"><a href="/enquiry" class="nav-link" style="color: black; ">Enquiry</a></li>
 
             </ul>
-             {% if user.is_authenticated %}
+            {% if user.is_authenticated %}
               <div class="user-info">
             <span class="user-initial">{{ user.first_name|slice:":1" }}</span>
             <a href="{% url 'logout' %}" class="nav-link">
@@ -58,6 +54,9 @@
 
         </nav>
 
+   <!--   <a href="https://docs.google.com/forms/d/1U3UVsF-JUpyat6JUtyMX9MiWbGVX-SuU1J7ejx-gg2U/edit">  <button class="btn btn-secondary " type="button"  aria-expanded="false" style="background-color: #D22B2B; border-color: black; font-size: 16px;">
+            Post Your Property
+        </button></a> -->
 
 
             <!--<div class="d-flex align-items-center">
@@ -74,8 +73,6 @@
 </div> -->
     </div>
 </header>
-<hr style="border: none; height: 1px; background-color: black;">
-
 <div id="sidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
     <a href="/">Home</a>
@@ -97,50 +94,74 @@
     </a>
     {% endif %}
 </div>
-<section class="pricing">
-    <h1>Subscribe And Post</h1>
-    <div class="togglee">
-        <label>Monthly</label>
-        <div class="togglee-btn">
-            <input type="checkbox" id="checkbox" class="checkbox"/>
-            <label for="checkbox" class="sub" id="suv">
-                <div class="circle"></div>
-            </label>
-        </div>
-        <label>Annually</label>
-    </div>
-    <br><br>
 
-    <!-- cards -->
-    <div class="cards">
-        <div class="card shadow">
-            <ul style="list-style-type: none;">
-                <li class="pack">Basic</li>
-                <li id="basic" class="price bottom-bar">15k/month</li>
-                <li class="bottom-bar">Property Upto 50 lac</li>
-                <a href="/form1">  <li><button class="btn">Make Payment</button></li></a>
-            </ul>
-        </div>
 
-        <div class="card active">
-            <ul style="list-style-type: none;">
-                <li class="pack">Premium</li>
-                <li id="basic" class="price bottom-bar">20k/month</li>
-                <li class="bottom-bar">Property Upto 50 lac</li>
-               <a href="/form1"> <li><button class="btn active-btn">Make Payment</button></li></a>
-            </ul>
-        </div>
+<h1 align="center"> Privacy Policy</h1>
+<hr>
 
-        <div class="card shadow">
-            <ul style="list-style-type: none;">
-                <li class="pack">Pro</li>
-                <li id="basic" class="price bottom-bar">35k/month</li>
-                <li class="bottom-bar">Property Upto 50 lac</li>
-                <a href="/form1"><li><button class="btn">Make Payment</button></li></a>
-            </ul>
-        </div>
-    </div>
-</section>
+<h3> 1. Information We Collect</h3>
+<p>We may collect the following types of information when you interact with our website:</p>
+<ul>
+<li>Personal Information: Name, email address, phone number, and any other details provided when registering, filling forms, or contacting us.</li>
+<li>Property Information: Details about the property you wish to buy, sell, or rent.</li>
+<li>Location Data: When browsing properties or accessing certain features, we may collect location data to offer you relevant property listings.</li>
+    <li>Technical Data: Your IP address, browser type, device information, and usage data (such as pages visited).</li>
+</ul>
+<h3>2. How We Use Your Information</h3>
+<p>We use the information collected for the following purposes:</p>
+<ul>
+    <li>To provide you with the services offered on MyHome.ug (buying, selling, or renting properties).</li>
+    <li>To send you relevant property listings and updates based on your preferences.</li>
+    <li>To respond to inquiries or requests you submit through our website.</li>
+    <li>To improve our website's functionality and enhance your user experience.</li>
+    <li>To analyze trends and monitor site usage to better understand user needs.</li>
+</ul>
+
+<h3>3. Cookies and Tracking Technologies</h3>
+<p>We use cookies and similar tracking technologies to improve your experience on our website. Cookies help us:</p>
+<ul>
+    <li>Remember your preferences and personalized settings.</li>
+    <li>Provide targeted advertising and marketing communications.</li>
+    <li>Analyze website traffic and user behavior.</li>
+
+</ul>
+
+<h3>4. How We Share Your Information</h3>
+<p>We do not sell or share your personal information with third parties except in the following situations:</p>
+<ul>
+    <li>Service Providers: We may share information with trusted third-party service providers who assist us in delivering services (e.g., payment processors, IT support).</li>
+    <li>Legal Requirements: We may disclose your information if required by law or to protect our legal rights.</li>
+    <li>Business Transfers: In the event of a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction.</li>
+</ul>
+
+<h3>5. Data Security</h3>
+<p>We take reasonable measures to protect your personal data from unauthorized access, disclosure, alteration, or destruction. However, no data transmission over the internet is completely secure, and we cannot guarantee the absolute security of your information.</p>
+
+<h3>6. Your Rights</h3>
+<p>You have the following rights concerning your personal data:</p>
+<ul>
+    <li>Access and Correction: You can request access to or correction of your personal data at any time.</li>
+    <li>Data Deletion: You may request that we delete your personal data, except when we are legally required to retain it.</li>
+    <li>Withdraw Consent: You may withdraw your consent to the use of your personal data at any time, but this may affect our ability to provide services.</li>
+</ul>
+
+<h3>7. Third-Party Links</h3>
+<p>Our website may contain links to third-party websites. We are not responsible for the privacy practices of these sites. We encourage you to review their privacy policies before sharing any personal information.</p>
+
+<h3>8. Changes to the Privacy Policy</h3>
+<p>We may update this privacy policy from time to time. Any changes will be posted on this page with the updated date. We encourage you to review the policy regularly to stay informed about how we are protecting your information.</p>
+
+<h3>9. Contact Us</h3>
+<p>If you have any questions about this privacy policy or your personal data, please contact us at:<br>
+Email: support@myhome.ug<br>
+    Phone: +256-XXX-XXXXXX
+
+
+</p>
+
+
+
+
 
 
 
@@ -210,24 +231,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
    <!-- Add this script at the bottom of your HTML file -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
-<script> document.getElementById('checkbox').addEventListener('change', function() {
-        const basicPrice = document.querySelectorAll('#basic.price');
-        const pricesMonthly = ['15k/month', '20k/month', '35k/month'];
-        const pricesAnnually = ['150k/year', '200k/year', '350k/year'];
-
-        if (this.checked) {
-            // Annually pricing
-            basicPrice.forEach((price, index) => {
-                price.textContent = pricesAnnually[index];
-            });
-        } else {
-            // Monthly pricing
-            basicPrice.forEach((price, index) => {
-                price.textContent = pricesMonthly[index];
-            });
-        }
-    });
-</script>
 </body>
 </html>

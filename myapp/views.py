@@ -182,4 +182,18 @@ def properties(request):
     })
 
 
+def privacy(request):
+    return render(request, 'privacy.html')
+
+
+def terms(request):
+    return render(request, 'terms.html')
+
+def blogpage(request):
+    return render(request, 'blogpage.html')
+
+def blog1(request):
+    return render(request, 'blog1.html')
+
+
 

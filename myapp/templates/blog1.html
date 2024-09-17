@@ -6,11 +6,9 @@
 
     <meta charset="UTF-8">
     <title>Title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="{% static '/style.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap CSS -->
@@ -23,13 +21,11 @@
 <body>
 <header class="header">
     <div class="container d-flex justify-content-between align-items-center py-3">
-       <div class="logo-container">
+    <div class="logo-container">
   <a href="/" class="logo">
     <img src="{% static 'images/logonew1.png' %}" alt="YourHome.com Logo" class="sitename" style="width: 100px; height: auto;">
   </a>
 </div>
-
-
         <button class="navbar-toggler" type="button"  aria-label="Toggle navigation" onclick="toggleSidebar()" style="color: black;">
             &#9776; <!-- This is the hamburger menu icon -->
         </button>
@@ -42,7 +38,7 @@
                 <li class="nav-item"><a href="/enquiry" class="nav-link" style="color: black; ">Enquiry</a></li>
 
             </ul>
-             {% if user.is_authenticated %}
+            {% if user.is_authenticated %}
               <div class="user-info">
             <span class="user-initial">{{ user.first_name|slice:":1" }}</span>
             <a href="{% url 'logout' %}" class="nav-link">
@@ -58,6 +54,9 @@
 
         </nav>
 
+   <!--   <a href="https://docs.google.com/forms/d/1U3UVsF-JUpyat6JUtyMX9MiWbGVX-SuU1J7ejx-gg2U/edit">  <button class="btn btn-secondary " type="button"  aria-expanded="false" style="background-color: #D22B2B; border-color: black; font-size: 16px;">
+            Post Your Property
+        </button></a> -->
 
 
             <!--<div class="d-flex align-items-center">
@@ -74,8 +73,6 @@
 </div> -->
     </div>
 </header>
-<hr style="border: none; height: 1px; background-color: black;">
-
 <div id="sidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
     <a href="/">Home</a>
@@ -97,54 +94,55 @@
     </a>
     {% endif %}
 </div>
-<section class="pricing">
-    <h1>Subscribe And Post</h1>
-    <div class="togglee">
-        <label>Monthly</label>
-        <div class="togglee-btn">
-            <input type="checkbox" id="checkbox" class="checkbox"/>
-            <label for="checkbox" class="sub" id="suv">
-                <div class="circle"></div>
-            </label>
-        </div>
-        <label>Annually</label>
-    </div>
-    <br><br>
 
-    <!-- cards -->
-    <div class="cards">
-        <div class="card shadow">
-            <ul style="list-style-type: none;">
-                <li class="pack">Basic</li>
-                <li id="basic" class="price bottom-bar">15k/month</li>
-                <li class="bottom-bar">Property Upto 50 lac</li>
-                <a href="/form1">  <li><button class="btn">Make Payment</button></li></a>
-            </ul>
-        </div>
+<section class="heroo position-relative">
+        <img src="{% static '/images/building.jpg' %}" alt="Properties in Udaipur" class="img-fluid" style="width: 100%; height: auto; "> <br><Br>
 
-        <div class="card active">
-            <ul style="list-style-type: none;">
-                <li class="pack">Premium</li>
-                <li id="basic" class="price bottom-bar">20k/month</li>
-                <li class="bottom-bar">Property Upto 50 lac</li>
-               <a href="/form1"> <li><button class="btn active-btn">Make Payment</button></li></a>
-            </ul>
-        </div>
 
-        <div class="card shadow">
-            <ul style="list-style-type: none;">
-                <li class="pack">Pro</li>
-                <li id="basic" class="price bottom-bar">35k/month</li>
-                <li class="bottom-bar">Property Upto 50 lac</li>
-                <a href="/form1"><li><button class="btn">Make Payment</button></li></a>
-            </ul>
-        </div>
-    </div>
+
+<h2 align="center">Find Your Dream Home with MyHome.ug</h2>
+    <hr style="border: 1px solid black;">
+
+<div class="center-content">
+<h5 style=" color: #D22B2B; ">1. Comprehensive Listings for Buyers and Renters</h5>
+<p>Finding the right home or rental can be challenging, especially when faced with limited information. At MyHome.ug, we offer an extensive database of properties across Uganda. Whether you're seeking a cozy apartment in Kampala or a spacious house in a quieter part of the country, our platform has something for everyone.<br>
+You can browse property listings with detailed information, including:
+</p>
+<ul >
+    <li>Property size and layout</li>
+    <li>Location details and neighborhood amenities</li>
+    <li>High-quality images and virtual tours</li>
+    <li>Contact information for property agents or owners</li>
+</ul>
+<p>Our advanced search filters allow you to refine your options by budget, property type, and location, making the process efficient and stress-free.</p>
+
+<h5  style=" color: #D22B2B; ">2. A Seamless Experience for Sellers</h5>
+<p>Selling a property can be time-consuming, but MyHome.ug simplifies the process. By listing your property on our platform, you'll reach thousands of potential buyers and renters across Uganda. Our user-friendly interface allows you to upload your property details, images, and pricing easily, ensuring that your listing stands out.<br>
+In addition, we offer various promotional tools to boost the visibility of your property, helping you close deals faster.</p>
+
+<h5  style=" color: #D22B2B; ">3. Trusted and Verified Listings</h5>
+<p>At MyHome.ug, trust is our priority. We work hard to ensure that all property listings are verified, giving you peace of mind as you browse or list properties. Our platform partners with credible real estate agents and property owners, so you can be sure you're getting accurate information and legitimate opportunities.</p>
+<h5  style=" color: #D22B2B; ">    4. Expert Advice and Resources</h5>
+<p>Real estate transactions can be complex, but MyHome.ug is here to guide you through every step.<br>
+     Our blog and resources section offers expert advice on topics such as:</p>
+<ul>
+    <li>How to Buy a Home in Uganda: A complete guide for first-time buyers, including tips on securing a mortgage and understanding legal requirements.</li>
+    <li>Renting Tips: Essential information for renters, from lease agreements to tenant rights.</li>
+    <li>Property Investment: Strategies to help you make informed investment decisions in Uganda's growing real estate market.</li>
+</ul>
+<p>Stay informed with market trends, legal updates, and home improvement ideas, all available on our platform.</p>
+
+<h5  style=" color: #D22B2B; ">5. Responsive and Mobile-Friendly</h5>
+<p>Your real estate search shouldn't be limited to a desktop. That's why MyHome.ug is fully optimized for mobile devices, allowing you to browse and manage property listings on the go. Whether you're viewing properties on your phone or contacting sellers directly from your mobile, our platform ensures a smooth, hassle-free experience.</p>
+
+
+<h5  style=" color: #D22B2B; ">Start Your Real Estate Journey with MyHome.ug Today</h5>
+<p>Whether you're in the market to buy, sell, or rent property, MyHome.ug is your trusted partner in Uganda's real estate sector. Start exploring listings today and take the first step toward your next property transaction.<br>
+Visit MyHome.ug now, and discover how simple real estate can be.</p>
+
+</div>
+
 </section>
-
-
-
-
 
 <div class="footer-clean">
     <footer>
@@ -210,24 +208,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
    <!-- Add this script at the bottom of your HTML file -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
-<script> document.getElementById('checkbox').addEventListener('change', function() {
-        const basicPrice = document.querySelectorAll('#basic.price');
-        const pricesMonthly = ['15k/month', '20k/month', '35k/month'];
-        const pricesAnnually = ['150k/year', '200k/year', '350k/year'];
-
-        if (this.checked) {
-            // Annually pricing
-            basicPrice.forEach((price, index) => {
-                price.textContent = pricesAnnually[index];
-            });
-        } else {
-            // Monthly pricing
-            basicPrice.forEach((price, index) => {
-                price.textContent = pricesMonthly[index];
-            });
-        }
-    });
-</script>
 </body>
 </html>

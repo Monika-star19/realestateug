@@ -46,5 +46,9 @@ urlpatterns = [
     path('enquiry/', views.enquiry),
      path('saveseller', views.saveseller, name="saveseller"),
     path('enquirysave', views.enquirysave, name='enquirysave'),
+    path('privacy', views.privacy),
+    path('terms', views.terms),
+    path('blogpage', views.blogpage),
+    path('blog1', views.blog1),
 
 ]
