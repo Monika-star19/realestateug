@@ -195,5 +195,7 @@ def blogpage(request):
 def blog1(request):
     return render(request, 'blog1.html')
 
+def trends(request):
+    return render(request, 'trends.html')
 
 

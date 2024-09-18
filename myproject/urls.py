@@ -50,5 +50,6 @@ urlpatterns = [
     path('terms', views.terms),
     path('blogpage', views.blogpage),
     path('blog1', views.blog1),
+    path('trends', views.trends),
 
 ]

@@ -8,6 +8,16 @@
   font-weight: 300;
 }
 
+  h1, h2, h3, h4, h5, h6 {
+      font-family: 'Bai Jamjuree', sans-serif;
+      font-weight: 700; /* Bold for headings */
+    }
+
+.body, p, span, a, li, div {
+      font-family: 'Red Hat Display', sans-serif;
+      font-weight: 400; /* Regular for other text */
+    }
+
 .header {
     background-color: #fff; /* Header color */
     color: white;
@@ -1269,8 +1279,8 @@ select {
 background-color: #fff;
 padding: 2rem;
 height:400px;
-width: 500px;
-margin-left: 250px;
+width: 600px;
+margin-left: 200px;
 
 }
 
